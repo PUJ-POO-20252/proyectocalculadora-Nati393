@@ -1,17 +1,36 @@
 // main.cpp
 #include <iostream>
-#include "matematicas.h" // Incluimos nuestro contrato
+#include "matematicas.h"
 
 int main() {
-    // Definición de variables
-    int x = 10;
-    int y = 4;
+    int a, b;
+    char operador;
 
-    int resultado_suma = sumar(x,y); // Les damos a las funciones el valor de la definición
-    int resultado_resta = restar(x,y);
+    std::cout << "Ingrese el primer número: ";
+    std::cin >> a;
 
-    std::cout << "Suma: " <<resultado_suma << std::endl; //Mostramos en pantalla el resultado
-    std::cout << "Resta: " <<resultado_resta << std::endl;
+    std::cout << "Ingrese el operador (+, -, *, /): ";
+    std::cin >> operador;
+
+    std::cout << "Ingrese el segundo número: ";
+    std::cin >> b;
+
+    switch (operador) {
+        case '+':
+            std::cout << "Resultado: " << sumar(a, b) << std::endl;
+            break;
+        case '-':
+            std::cout << "Resultado: " << restar(a, b) << std::endl;
+            break;
+        case '*':
+            std::cout << "Resultado: " << multiplicar(a, b) << std::endl;
+            break;
+        case '/':
+            std::cout << "Resultado: " << dividir(a, b) << std::endl;
+            break;
+        default:
+            std::cout << "Operador no válido." << std::endl;
+    }
 
     return 0;
 }
